@@ -1,2 +1,2 @@
 # java
-java菜鸟成长
+java菜鸟
