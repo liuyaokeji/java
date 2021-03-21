@@ -1,0 +1,35 @@
+import java.util.*;//导包 扫描器，随机数。
+class  Demo1 
+//需求：最多只能才三次，如果还剩下最后一次机会的时候要提醒用户。
+//待改进：每次输入错，总会出现“请输入数字”。
+//优化while循环放入扫描器下面，---打个电话不需要很多部手机。
+//实现猜数字游戏，如果没有猜对可以继续输入你猜的数字，如果猜对了停止程序。
+{
+	public static void main(String[] args) 
+	{
+		Random random = new Random();
+		//创建一个随机数对象
+		int num = random.nextInt(10)+1;//要求1~10 
+		//调用随机数对象的nextInt方法
+		//System.out.println("随机数"+num);
+		//测试时可直观发现数字的大小。
+
+		Scanner scanner = new Scanner(System.in);
+		//创建一个扫描器。
+		while(true)
+		//while循环--实现直到输入正确才可“正常”跳出程序。
+		{
+			System.out.println("请输入一个数字");
+			int shuZi = scanner.nextInt();
+			//调用扫描器的nextInt方法。
+			if(shuZi>num){
+				System.out.println("请输入小一点的数字");
+			}else if(shuZi<num)
+				{System.out.println("请输入大一点的数字");
+			}else 
+				{System.out.println("恭喜你猜对了！");break;
+				// break -- 实现输入正确及可跳出程序。
+			}
+		}
+	}
+}
